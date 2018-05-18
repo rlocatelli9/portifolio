@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--CSS customizado para carousel-->
+    <link href="carousel.css" rel="stylesheet">
+
+    <title>Página inicial</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <!--<a class="navbar-brand" href="#">Robson Locatelli</a>-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contato
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-brand">Robson Locatelli</div>
+        </nav>
+    </header>
+
+    <main role="main" class="container-fluid">
+        <?php 	  require_once('functions.php'); 	  add();	?>
+        <?php include(HEADER_TEMPLATE); ?>
+        <h2>Novo Cliente</h2>
+        <form action="request.php" method="post">
+            <!-- area de campos do form -->
+            <hr />
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="name">Nome / Razão Social</label>
+                    <input type="text" class="form-control" name="customer['name']"> </div>
+                <div class="form-group col-md-4">
+                    <label for="campo2">E-mail de contato</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="exampleFormControlSelect1">Selecione o motivo do contato</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Contratação de serviço</option>
+                        <option>Reclamações</option>
+                        <option>Opniões/Sugestões</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label for="exampleFormControlTextarea1">Mensagem</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="g-recaptcha" data-sitekey="6LeVYVkUAAAAAAJNwGfJLvBHA9Wtazdx9Cjn2urm"></div>
+
+            <br />
+            <div id="actions" class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <a href="index.html" class="btn btn-default">Cancelar</a>
+                </div>
+            </div>
+        </form>
+        <?php include(FOOTER_TEMPLATE); ?>
+
+        <!-- FOOTER -->
+        <footer class="container">
+            <p class="float-right">
+                <a href="#">Voltar para o topo</a>
+            </p>
+            <div class="row">
+                <p class="col-md-6">© 2018. Todos dos direitos reservados.</p>
+                <p class="col-md-6">rlocatelli9@gmail.com</p>
+            </div>
+        </footer>
+    </main>
+
+    <!--Javascript-->
+    <script src="jquery-321/jquery-3.2.1.slim.min.js"></script>
+    <script src="ajax/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl=pt-BR'></script>
+</body>
+
+</html>
